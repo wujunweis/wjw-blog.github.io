@@ -3,11 +3,11 @@
   <title>Vinson Blog</title>
   
   <subtitle>Take notes with your heart</subtitle>
-  <link href="https://wujunweis.github.io/wjw-blog.github.io/atom.xml" rel="self"/>
+  <link href="https://wujunweis.github.io/atom.xml" rel="self"/>
   
-  <link href="https://wujunweis.github.io/wjw-blog.github.io/"/>
+  <link href="https://wujunweis.github.io/"/>
   <updated>2020-11-14T09:23:53.155Z</updated>
-  <id>https://wujunweis.github.io/wjw-blog.github.io/</id>
+  <id>https://wujunweis.github.io/</id>
   
   <author>
     <name>Nick Vinson</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>斐切纳波数列</title>
-    <link href="https://wujunweis.github.io/wjw-blog.github.io/2020/11/13/js-firstDay/"/>
-    <id>https://wujunweis.github.io/wjw-blog.github.io/2020/11/13/js-firstDay/</id>
+    <link href="https://wujunweis.github.io/2020/11/13/js-firstDay/"/>
+    <id>https://wujunweis.github.io/2020/11/13/js-firstDay/</id>
     <published>2020-11-13T09:30:49.373Z</published>
     <updated>2020-11-14T09:23:53.155Z</updated>
     
@@ -35,14 +35,14 @@
     
     
     
-    <category term="JavaScript" scheme="https://wujunweis.github.io/wjw-blog.github.io/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://wujunweis.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>Hello World - Hi Everyone</title>
-    <link href="https://wujunweis.github.io/wjw-blog.github.io/2020/11/13/index/"/>
-    <id>https://wujunweis.github.io/wjw-blog.github.io/2020/11/13/index/</id>
+    <link href="https://wujunweis.github.io/2020/11/13/index/"/>
+    <id>https://wujunweis.github.io/2020/11/13/index/</id>
     <published>2020-11-13T03:01:32.026Z</published>
     <updated>2020-11-14T05:53:39.210Z</updated>
     
