@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Nick Vinson Blog">
+    <meta name="keywords" content="斐切纳波数列, Nick Vinson Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Nick Vinson Blog</title>
+    <title>斐切纳波数列 | Nick Vinson Blog</title>
     <link rel="icon" type="image/png" href="/wjw-blog.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/wjw-blog.github.io/libs/awesome/css/all.css">
@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="/wjw-blog.github.io/css/my.css">
 
     <script src="/wjw-blog.github.io/libs/jquery/jquery.min.js"></script>
-
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 <meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/wjw-blog.github.io/atom.xml" title="Nick Vinson Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/wjw-blog.github.io/css/prism-tomorrow.css" type="text/css"></head>
 
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/wjw-blog.github.io/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/wjw-blog.github.io/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">斐切纳波数列</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/wjw-blog.github.io/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -459,7 +463,153 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="斐切纳波数列"><a href="#斐切纳波数列" class="headerlink" title="斐切纳波数列"></a>斐切纳波数列</h1><h2 id="实现方法-简单总结-for-递归"><a href="#实现方法-简单总结-for-递归" class="headerlink" title="实现方法 简单总结 for/递归"></a>实现方法 简单总结 for/递归</h2>
+                <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605335380810&di=da17c986367d7bdd58e60a8fa28a0e28&imgtype=0&src=http://i0.hdslb.com/bfs/article/dfa83176de7c759457b7aad55c7c45197e2e4198.jpg"></p>
+<h2 id="实现方法-简单总结-for-while、递归"><a href="#实现方法-简单总结-for-while、递归" class="headerlink" title="实现方法 简单总结 for/while、递归"></a>实现方法 简单总结 for/while、递归</h2><ul>
+<li><p>斐波那契数列，是指这样的一组数列： 1、1、2、3、5、8、13、21……在数学上，斐波那契数列被以递归的方法定义：F0=0，F1=1，Fn=Fn-1+Fn-2（n&gt;2, n∈N*），用文字说，就是斐波那契数列由0和1开始，之后的斐波那契数列系数就由之前的两个数相加之和。</p>
+</li>
+<li><p>常用的计算方法由两大类：递归/循环 ，后面会补充所有算法使用</p>
+</li>
+<li><p>计算的时候可以加入<code>console.time('id')</code> 与 <code>console.timeEnd('id')</code> 如果你还不知道console的用发可以<a href="'https://developer.mozilla.org/en-US/docs/Web/API/Console'">点击这里</a></p>
+</li>
+</ul>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><h3 id="常见递归"><a href="#常见递归" class="headerlink" title="常见递归"></a>常见递归</h3><ul>
+<li><p>优点：代码简洁清晰。</p>
+</li>
+<li><p>缺点：存在重复计算，浪费内存（递归是一个堆栈计算过程，数字过大会超出内存不够的情况）</p>
+</li>
+<li><p>example： n=5  -&gt; fib(4)+fib(3),fib(3)+fib(2) 大于50可能浏览器就出现假死现象</p>
+<pre class=" language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">||</span> n <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">fib</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fib</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fib</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//832040</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//runTime: 9.702880859375 ms</span></code></pre>
+</li>
+</ul>
+<h3 id="优化递归：思路将前两个数作为参数避免这里的重复计算"><a href="#优化递归：思路将前两个数作为参数避免这里的重复计算" class="headerlink" title="优化递归：思路将前两个数作为参数避免这里的重复计算"></a>优化递归：思路将前两个数作为参数避免这里的重复计算</h3><ul>
+<li><p>优点：1 .可以说省去大量重复计算，相当的快了（因为只有对应需要的才会加） 2. 代码简洁，易懂</p>
+<pre class=" language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+       <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+       <span class="token keyword">else</span>
+       <span class="token punctuation">{</span>
+           <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fib</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//832040</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//runTime: 0.105712890625 ms</span></code></pre>
+</li>
+</ul>
+<h3 id="优化递归：既然可以把数字作为参数传递，那么把运算结果存储在数组内使用闭包，也能避免计算（闭包，数组引用传值）"><a href="#优化递归：既然可以把数字作为参数传递，那么把运算结果存储在数组内使用闭包，也能避免计算（闭包，数组引用传值）" class="headerlink" title="优化递归：既然可以把数字作为参数传递，那么把运算结果存储在数组内使用闭包，也能避免计算（闭包，数组引用传值）"></a>优化递归：既然可以把数字作为参数传递，那么把运算结果存储在数组内使用闭包，也能避免计算（闭包，数组引用传值）</h3><ul>
+<li><p>优点： 利用闭包+数组计算避免，数据重复计算</p>
+</li>
+<li><p>缺点： 需要操作数组赋值会有相应的消耗，代码可读性不是很友好（比上面的纯数字要慢）</p>
+<pre class=" language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> fib <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> memo <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> f <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>memo<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">===</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            memo<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">f</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">f</span><span class="token punctuation">(</span>n <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> memo<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 因外层为立即执行函数 真正使用的其实是本身 ‘f’ 函数</span>
+    <span class="token keyword">return</span> f<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fib</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//832040</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//runTime: 0.169921875</span></code></pre>
+</li>
+</ul>
+<h3 id="优化递归：既然闭包能存储计算结果那么，将计算结果直接提取成计算函数呢？"><a href="#优化递归：既然闭包能存储计算结果那么，将计算结果直接提取成计算函数呢？" class="headerlink" title="优化递归：既然闭包能存储计算结果那么，将计算结果直接提取成计算函数呢？"></a>优化递归：既然闭包能存储计算结果那么，将计算结果直接提取成计算函数呢？</h3><ul>
+<li><p>优点：将闭包拆分出来，方便阅读理解，让函数更加纯粹</p>
+</li>
+<li><p>缺点：增加了逻辑判断与执行行，可能会产生一定的消耗，整体上处理时间与匿名闭包差不多</p>
+<pre class=" language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> memoizer <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> memo <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>memo<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">===</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            memo<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">func</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> memo<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> fib <span class="token operator">=</span> <span class="token function">memoizer</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">||</span> n <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">fib</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fib</span><span class="token punctuation">(</span>n <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fib</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//832040</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//runTime: 0.2080078125 ms</span></code></pre>
+</li>
+</ul>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><h3 id="普通for-循环【迭代算法】"><a href="#普通for-循环【迭代算法】" class="headerlink" title="普通for 循环【迭代算法】"></a>普通for 循环【迭代算法】</h3><ul>
+<li><p>优点：代码简洁易懂，纯粹的计算数值</p>
+</li>
+<li><p>缺点：存在多变量，需要计算赋值</p>
+<pre class=" language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> sum<span class="token punctuation">;</span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       sum <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+       a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+       b <span class="token operator">=</span> sum<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fib</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//832040</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//runTime: 0.130126953125 ms</span></code></pre>
+</li>
+</ul>
+<h3 id="for-循环【迭代算法】：-怎么改进-思路去掉sum变量，我们其实只需要第二个值即第n个的a与b的加和。比如-【a-b】-我们实际得到要的值是-b-个的【a-b】-然后去实现试试"><a href="#for-循环【迭代算法】：-怎么改进-思路去掉sum变量，我们其实只需要第二个值即第n个的a与b的加和。比如-【a-b】-我们实际得到要的值是-b-个的【a-b】-然后去实现试试" class="headerlink" title="for 循环【迭代算法】： 怎么改进 思路去掉sum变量，我们其实只需要第二个值即第n个的a与b的加和。比如 【a, b】 我们实际得到要的值是 b 个的【a + b】  然后去实现试试"></a>for 循环【迭代算法】： 怎么改进 思路去掉sum变量，我们其实只需要第二个值即第n个的a与b的加和。比如 【a, b】 我们实际得到要的值是 b 个的【a + b】  然后去实现试试</h3><ul>
+<li><p>优点：运用解构赋值，代码简洁，省去了不必要的变量</p>
+</li>
+<li><p>缺点：利用数组解构，增加了复杂难度会有一定的时间消耗</p>
+<pre class=" language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> fib <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>b<span class="token punctuation">,</span> a <span class="token operator">+</span> b<span class="token punctuation">]</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fib</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//832040</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'runTime'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//runTime: 0.14599609375 ms</span></code></pre>
+</li>
+</ul>
+<h3 id="while-逆向思维【迭代算法】"><a href="#while-逆向思维【迭代算法】" class="headerlink" title="while 逆向思维【迭代算法】"></a>while 逆向思维【迭代算法】</h3><ul>
+<li><p>优点：代码简洁，省去了计算i值，比递归计算快</p>
+</li>
+<li><p>缺点：不易理解，取的值 b即为sum值</p>
+<pre><code>console.time(&#39;runTime&#39;);
+let fib = function(n) &#123;
+   let a = 0, b = 1;
+   while(n--)&#123;
+       b = a + b;
+       a = b - a;
+   &#125;
+   return b;
+&#125;
+console.log(fib(30));//832040
+console.timeEnd(&#39;runTime&#39;);//runTime: 0.178955078125 ms</code></pre>
+</li>
+</ul>
+<ul>
+<li>正常来说单层for 循环运算应该是最快的&gt;优化过的递归操作&gt;普通递归 （这里从控制台输出的为什么不是这个结果呢？其实跟当前计算的数值大小有关，当计算数值大于50 或 100 以上的时候这个时间差会越来越明显(也可以理解为层数偏少的计算递归也有一定的优势)<br>  example： 普通for 300 就比 递归快 将近0.1 ms）<br>  合理的选择与自己产品相应的计算方法才是最好的～</li>
+</ul>
+<h5 id="因为本人是Web菜鸟理解能力有限，以上算法来自网络，经过个人整理，如有问题请留言或私信联系我指出。Thanks-～"><a href="#因为本人是Web菜鸟理解能力有限，以上算法来自网络，经过个人整理，如有问题请留言或私信联系我指出。Thanks-～" class="headerlink" title="因为本人是Web菜鸟理解能力有限，以上算法来自网络，经过个人整理，如有问题请留言或私信联系我指出。Thanks ～"></a>因为本人是Web菜鸟理解能力有限，以上算法来自网络，经过个人整理，如有问题请留言或私信联系我指出。Thanks ～</h5>
             </div>
             <hr/>
 
@@ -521,7 +671,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/wjw-blog.github.io/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -696,15 +850,17 @@
                     <div class="card-image">
                         
                         
-                        <img src="/wjw-blog.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/wjw-blog.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="斐切纳波数列">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">斐切纳波数列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            斐切纳波数列实现方法 简单总结 for/递归
+                            
+实现方法 简单总结 for/while、递归
+斐波那契数列，是指这样的一组数列： 1、1、2、3、5、8、13、21……在数学上，斐波那契数列被以递归的方法定义：F0=0，F1=1，Fn=Fn-1+Fn-2（n&gt;2, n∈N*），用
                         
                     </div>
                     <div class="publish-info">
@@ -720,6 +876,14 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/wjw-blog.github.io/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -742,8 +906,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo-WJW-Blog
-Start Daily Learn Today
+                            Welcome to Hexo-WJW-Blog关于本主题与Hexo可以参考这里
+
                         
                     </div>
                     <div class="publish-info">
