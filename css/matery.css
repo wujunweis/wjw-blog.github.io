@@ -1947,6 +1947,9 @@ footer .copy-right {
         float: left;
         width: 50%;
     }
+    .header .brand-logo .logo-span{
+        font-size: 1.6rem;
+    }
 }
 
 @media screen and (min-width: 768px) {
