@@ -359,6 +359,33 @@
         </div>
         <div class="card">
             
+            <link rel="stylesheet" href="/wjw-blog.github.io/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/wjw-blog.github.io/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/wjw-blog.github.io/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '5b31d22e2d617447fbed',
+        clientSecret: '7c18adc274bcab05c1609d6ac8cb535b57b51317',
+        repo: 'wjw-blob',
+        owner: 'wujunweis',
+        admin: "wujunweis",
+        id: '2020-11-13T14-20-08',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+            
 
             
 
