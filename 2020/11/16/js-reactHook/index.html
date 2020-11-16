@@ -456,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.5k
+                    1.6k
                 </div>
                 
 
@@ -628,9 +628,58 @@ type Effect <span class="token operator">=</span> <span class="token punctuation
 </li>
 </ul>
 <h1 id="hooks与生命周期"><a href="#hooks与生命周期" class="headerlink" title="hooks与生命周期"></a>hooks与生命周期</h1><ul>
-<li>函数组件的本质是函数，没有state的概念的，因此不存在生命周期一说，仅仅是一个render的函数而已。</li>
-<li>如引入<code>Hooks</code>之后就变得不同了，它能让组件在不使用class的情况下拥有state，所以就有了生命周期的概念，所谓的生命周期其实就是useState、useEffect与useLayoutEffect()。</li>
-<li>hooks 组件（使用了hooks）有生命周期，而函数组件（没有使用hooks）没有生命周期。</li>
+<li><p>函数组件的本质是函数，没有state的概念的，因此不存在生命周期一说，仅仅是一个render的函数而已。</p>
+</li>
+<li><p>如引入<code>Hooks</code>之后就变得不同了，它能让组件在不使用class的情况下拥有state，所以就有了生命周期的概念，所谓的生命周期其实就是useState、useEffect与useLayoutEffect()。</p>
+</li>
+<li><p>hooks 组件（使用了hooks）有生命周期，而函数组件（没有使用hooks）没有生命周期。</p>
+</li>
+<li><p>生命周期class组件与hooks组件，对比如下：</p>
+<table>
+<thead>
+<tr>
+<th>class组件</th>
+<th>hooks组件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>constructor</td>
+<td>useState</td>
+</tr>
+<tr>
+<td>getDerivedStateFromProps</td>
+<td>useState 里面 update 函数</td>
+</tr>
+<tr>
+<td>shouldComponentUpdate</td>
+<td>useMemo</td>
+</tr>
+<tr>
+<td>render</td>
+<td>函数本身</td>
+</tr>
+<tr>
+<td>componentDidMount</td>
+<td>useEffect</td>
+</tr>
+<tr>
+<td>componentDidUpdate</td>
+<td>useEffect</td>
+</tr>
+<tr>
+<td>componentWillUnmount</td>
+<td>useEffect 里面返回的函数</td>
+</tr>
+<tr>
+<td>componentDidCatch</td>
+<td></td>
+</tr>
+<tr>
+<td>getDirivedStateFromError</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
 </ul>
 <hr>
 <blockquote>
@@ -1187,7 +1236,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.7k</span>&nbsp;字
+                class="white-color">2.8k</span>&nbsp;字
             
             
             
